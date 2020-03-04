@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="mystyle.css" >
+
+</head>
+<body>
+
+<h1>The Watch Hub</h1>
+ 
+<!-- nav bar --> 
+<div class="topnav">
+  <a class="active" href="index.html">Home</a>
+  <a href="contact.html">Contact</a>
+  <a href="products.html">Product</a>
+  <a href="myaccount.html">My Account</a>
+  <a href="basket.html">Basket</a>
+  <input type="text" placeholder="Search">
+</div>
+   
+<html> 
+<body> 
+
+<!-- for video -->
+
+<div>
+<iframe width="600" height="400" src="https://www.youtube.com/embed/eeRNjNs_2uk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+</video>
+
+
+
+</body> 
+</html>
+
+
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+<!-- Slideshow container -->
+
+
+<!-- describes the watch --> 
+
+<h1> Sekonda Men's Classic Watch</h1>
+
+<h2> The most viewed product this week </h2> 
+<div> 
+<img src="watch1.jpg" alt="watch" width="400" height="300">.<p style="text-align:center;">
+
+<h5> This simplistic yet stylish men's classic watch is ideal for adding a touch of sophistication to your daily look.
+This time piece features a round silver coloured ionic plated case housing a vibrant blue sunray dial with a date display. 
+The watch is fastened with a durable stainless steel bracelet and has water resistance to 50 metres.
+It has a round silver coloured ionic plated case.
+It has a blue sunray dial.
+It has a date display.
+It has a stainless steel bracelet.
+It is water resistant to 50 metres. </h5> 
+</div>
+
+<!-- for slideshow --> 
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 3000); // Change image every 3 seconds
+}
+</script>
+
+
+</body>
+</html>
+
+
+
+

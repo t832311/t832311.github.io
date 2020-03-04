@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="mystyle.css" >
+
+</head>
+<body>
+
+<h1>The Watch Hub</h1>
+
+
+<!-- nav bar -->  
+
+<div class="topnav">
+  <a href="index.html">Home</a>
+  <a class="active" href="contact.html">Contact</a>
+  <a href="products.html">Product</a>
+  <a href="myaccount.html">My Account</a>
+  <a href="basket.html">Basket</a>
+  <input type="text" placeholder="Search">
+</div>
+
+<h1>Contact Page</h1> 
+
+<!-- Slideshow container -->
+<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <img src="Resources/watch1.jpg" style="width:30%">
+  </div>
+
+  <div class="mySlides fade">
+    <img src="watch2.jpg" style="width:30%">
+  </div>
+
+  <div class="mySlides fade">
+    <img src="watch3.jpg" style="width:30%">
+  </div>
+
+
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+<!-- Slideshow container -->
+
+<!-- describes the watch --> 
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 3000); // Change image every 3 seconds
+}
+</script>
+
+
+</body>
+</html>
+
+<!-- contact info --> 
+
+
+<center>
+<div class="container">
+  <form action="action_page.php">
+
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="UK">UK</option>
+      <option value="Bangladesh">Bangladesh</option>
+    </select>
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:400px" style="width:400px"></textarea>
+
+    <input type="submit" value="Submit">
+</center> 
+  </form>
+</div>
+

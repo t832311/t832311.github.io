@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="mystyle.css" >
+
+</head>
+<body>
+
+<h1>The Watch Hub</h1>
+
+<!-- nav bar -->
+<div class="topnav">
+  <a href="index.html">Home</a>
+  <a href="contact.html">Contact</a>
+  <a class="active" href="products.html">Product</a>
+  <a href="myaccount.html">My Account</a>
+  <a href="basket.html">Basket</a>
+  <input type="text" placeholder="Search">
+</div>
+
+<h2>Watches for sale</h2>
+
+<!-- for add to cart/products --> 
+<meta charset="utf-8">
+  <title>My Shopping Cart</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="cart.css">
+  <!--<script
+  src="http://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+  
+  
+  <!-- for the products --> 
+        </a>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col col-sm-9">
+        
+        <div class="row">
+          <div class="col col-xs-12 col-md-6 col-lg-4">
+            <div>
+              <img src="watch2.jpg" width="200px" height="200px">
+            
+
+          
+          <p>Timex Archive Navi Harbour </p>
+          <p>£9000</p>
+          <p><input type="submit" value="Add to cart" class="btn"/></p>
+
+   </a>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col col-sm-9">
+        
+        <div class="row">
+          <div class="col col-xs-12 col-md-6 col-lg-4">
+            <div>
+              <img src="watch3.jpg" width="200px" height="200px">
+            
+
+          
+          <p>Mens Hugo Boss Grand Prix </p>
+          <p>£3200 </p>
+          <p><input type="submit" value="Add to cart" class="btn"/></p>
+        
+
+ </a>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col col-sm-9">
+        
+        <div class="row">
+          <div class="col col-xs-12 col-md-6 col-lg-4">
+            <div>
+              <img src="watch4.jpg" width="150px" height="200px">
+            
+
+          
+          <p>Audemars Piguet Royal Oak</p>
+          <p>£5000</p>
+          <p><input type="submit" value="Add to cart" class="btn"/></p>
+
+
+
+
+ </a>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col col-sm-9">
+        
+        <div class="row">
+          <div class="col col-xs-12 col-md-6 col-lg-4">
+            <div>
+              <img src="watch1.jpg" width="200px" height="200px">
+            </div>
+
+          
+          <p>Rolex Oyster Perpetual Datejust </p>
+          <p>£1500</p>
+          <p><input type="submit" value="Add to cart" class="btn"/></p>
+
+
+
+          </div>
+</div>
+
+
+
+<!-- calculates the products and allows user to enter details -->  
+      <div id="calculator">
+      </div>
+      <form>
+            <div id='shipping-form'>
+                <div>
+                    <label>Name</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div>
+                    <label>Address Line 1</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div>
+                    <label>Address Line 2</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div>
+                    <label>City</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div>
+                    <label>County</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div>
+                    <label>Post Code</label>
+                    <input type="text" class="form-control">
+                </div>
+            <div>
+                <input type="button" value="Submit" id="finish" />
+            </div>
+        </form>
+
+      </div>
+</div>
+
+
+
+  <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
+
+<!-- calculates the price --> 
+<script src="cart.js"></script>
+
+<script>
+function hideShippingForm() {
+    $('#shipping-form').hide();
+}
+hideShippingForm();
+
+$('.btn').click(function() {
+    let productName = $(this).parent().siblings('p').first().text();
+    let itemPrice = $(this).parent().siblings('p').eq(1).text();
+
+    $('.cart').append('<p><div>');
+    $('.cart').append(productName);;
+    $('.cart').append('<div style="float:right;">');
+    $('.cart').append(itemPrice);
+
+    calculate(itemPrice);
+});
+
+let subTotal = 0;
+let tax = 0;
+let total = 0;
+
+function calculate(itemPrice) {
+    priceInDecimal = itemPrice.slice(1);
+    $('#calculator').empty();
+    $('#calculator').append('<p><div>');
+    subTotal += parseFloat(priceInDecimal);
+    $('#calculator').append("sub total: £" + subTotal.toFixed(2));
+    $('#calculator').append('<p><div>');
+    tax = subTotal*10/100;
+    $('#calculator').append("tax: £" + tax.toFixed(2));
+    $('#calculator').append('<p><div>');
+    total = subTotal + tax;
+    $('#calculator').append("Total: £" + total.toFixed(2));
+
+    $('#calculator').append('<p><input type=button value="Next" id="next" class="test" />');
+
+    $('.test').click(function() {
+        console.log("Order successfully processed");
+        $('#shipping-form').show();
+    });
+}
+
+$('#finish').click(function() {
+    window.alert('Thank you for your order!');
+});
+</script>
+  
+  
+</body>
+</html>
+
+
+
+
